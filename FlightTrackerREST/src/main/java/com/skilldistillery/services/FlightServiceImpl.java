@@ -30,25 +30,19 @@ public class FlightServiceImpl implements FlightService {
 		}
 		return f;
 	}
+	
+	@Override
+	public List<Flight> searchFlightsByKeyword(String keyword) {
+		keyword = "%" + keyword +"%";
+		return repo.findByNameLike(keyword);
+	}
 
 	@Override
 	public Flight create(Flight flight) {
-		//Optional<Flight> op = repo.findById(id);
 		
 		return repo.saveAndFlush(flight);
 	}
 	
-//	@Override
-//	public Flight create(int id,  Flight flight) {
-//		Optional<Flight> opt = repo.findById(id);
-//		if (opt.isPresent()) {
-//			//flight.setFlight(opt.get());
-//			repo.saveAndFlush(flight);
-//			return flight;
-//		}
-//		
-//		return null;
-//	}
 
 	@Override
 	public Flight update(Flight flight, int id) {
@@ -59,7 +53,7 @@ public class FlightServiceImpl implements FlightService {
 		}
 		return null;
 	}
-//
+
 	@Override
 	public void delete(int id) {
 		if (repo.existsById(id)) {
@@ -67,6 +61,7 @@ public class FlightServiceImpl implements FlightService {
 		}
 		
 	}
+
 	
 	
 }

@@ -39,6 +39,12 @@ public class FlightController {
 		return flight;
 	}
 	
+	 @GetMapping("flights/search/{keyword}")
+	  public List<Flight> searchByKeyword(@PathVariable String keyword){
+		  return serv.searchFlightsByKeyword(keyword);
+		  
+	  }
+	
 	@PostMapping("flights/createFlight")
 	public Flight addFlight(HttpServletResponse resp, @RequestBody Flight flight) {
 		Flight newFlight = serv.create(flight);
@@ -55,7 +61,7 @@ public class FlightController {
 	public Flight updateFlight(@RequestBody Flight flight, @PathVariable int id) {
 		return serv.update(flight, id);
 	}
-//	
+	
 	@DeleteMapping("flights/{id}")
 	public void deleteFlight(@PathVariable int id) {
 		serv.delete(id);
