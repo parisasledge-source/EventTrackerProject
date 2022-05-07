@@ -1,6 +1,6 @@
 package com.skilldistillery.entities;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -36,16 +36,16 @@ public class Flight {
 	private String name;
 	
 	@Column(name="scheduled_time_of_departure")
-	private LocalDate std;
+	private LocalDateTime std;
 	
 	@Column(name="scheduled_time_of_arrival")
-	private LocalDate sta;
+	private LocalDateTime sta;
 	
 	@Column(name="actual_time_of_departure")
-	private LocalDate atd;
+	private LocalDateTime atd;
 	
 	@Column(name="actual_time_of_arrival")
-	private LocalDate status;
+	private LocalDateTime status;
 	
 	@Column(name="from_airport")
 	private String fromAirport;
@@ -80,35 +80,35 @@ public class Flight {
 		this.name = name;
 	}
 
-	public LocalDate getStd() {
+	public LocalDateTime getStd() {
 		return std;
 	}
 
-	public void setStd(LocalDate std) {
+	public void setStd(LocalDateTime std) {
 		this.std = std;
 	}
 
-	public LocalDate getSta() {
+	public LocalDateTime getSta() {
 		return sta;
 	}
 
-	public void setSta(LocalDate sta) {
+	public void setSta(LocalDateTime sta) {
 		this.sta = sta;
 	}
 
-	public LocalDate getAtd() {
+	public LocalDateTime getAtd() {
 		return atd;
 	}
 
-	public void setAtd(LocalDate atd) {
+	public void setAtd(LocalDateTime atd) {
 		this.atd = atd;
 	}
 
-	public LocalDate getStatus() {
+	public LocalDateTime getStatus() {
 		return status;
 	}
 
-	public void setStatus(LocalDate status) {
+	public void setStatus(LocalDateTime status) {
 		this.status = status;
 	}
 
