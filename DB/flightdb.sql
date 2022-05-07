@@ -21,7 +21,7 @@ USE `flightdb` ;
 DROP TABLE IF EXISTS `flight` ;
 
 CREATE TABLE IF NOT EXISTS `flight` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(500) NOT NULL,
   `scheduled_time_of_departure` DATETIME NULL,
   `scheduled_time_of_arrival` DATETIME NULL,
