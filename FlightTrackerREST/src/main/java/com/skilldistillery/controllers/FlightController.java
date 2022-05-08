@@ -1,5 +1,6 @@
 package com.skilldistillery.controllers;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -44,7 +45,7 @@ public class FlightController {
 		  return serv.searchFlightsByKeyword(keyword);
 		  
 	  }
-	
+	 
 	@PostMapping("flights/createFlight")
 	public Flight addFlight(HttpServletResponse resp, @RequestBody Flight flight) {
 		Flight newFlight = serv.create(flight);
@@ -67,4 +68,18 @@ public class FlightController {
 		serv.delete(id);
 	}
 	
+	
+	
+//	 ********************************    My Stretch Goals:   ********************************
+//	 @GetMapping("flights/search/{date}")
+//	 public List<Flight> searchByDate(@PathVariable LocalDateTime date){
+//		 return serv.searchFlightsByDate(date);
+//		 
+//	 }
+	
+//	@GetMapping("flights/search/std/{s}/{e}")
+//	public List<Flight> searchFlightsByStdRange(@PathVariable LocalDateTime s, @PathVariable LocalDateTime e){
+//		return serv.searchFlightsByStdRange(s, e);
+//		
+//	}
 }

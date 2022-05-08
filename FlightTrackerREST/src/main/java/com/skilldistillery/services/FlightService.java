@@ -1,5 +1,6 @@
 package com.skilldistillery.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import com.skilldistillery.entities.Flight;
@@ -12,4 +13,8 @@ public interface FlightService {
 	Flight update(Flight flight, int id);
 	void delete(int id);
 
+	
+//	****************    My Stretch Goals:   ****************
+//	List<Flight> searchFlightsByStd(LocalDateTime d);
+//	List<Flight> searchFlightsByStdRange(LocalDateTime st, LocalDateTime en);
 }

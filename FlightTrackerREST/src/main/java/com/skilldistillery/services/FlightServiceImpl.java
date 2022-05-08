@@ -1,5 +1,6 @@
 package com.skilldistillery.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,13 +37,12 @@ public class FlightServiceImpl implements FlightService {
 		keyword = "%" + keyword +"%";
 		return repo.findByNameLike(keyword);
 	}
-
+	
 	@Override
 	public Flight create(Flight flight) {
 		
 		return repo.saveAndFlush(flight);
 	}
-	
 
 	@Override
 	public Flight update(Flight flight, int id) {
@@ -58,10 +58,19 @@ public class FlightServiceImpl implements FlightService {
 	public void delete(int id) {
 		if (repo.existsById(id)) {
 			repo.deleteById(id);
-		}
-		
+		}	
 	}
-
 	
 	
+//	****************    My Stretch Goals:   ****************
+//	@Override
+//	public List<Flight> searchFlightsByDate(LocalDateTime date) {
+//		//date = "%" + date +"%";
+//		return repo.findByStdLike(date);
+//	}
+	
+//	@Override
+//	public List<Flight> searchFlightsByStdRange(LocalDateTime st, LocalDateTime en) {
+//		return repo.findByStdBetween(st, en);
+//	}
 }
