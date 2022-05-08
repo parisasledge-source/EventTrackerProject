@@ -17,6 +17,7 @@ Practicing in creating a JPA Project
   1. Practicing in creating entity table in MySQL workbench
   2. Practicing in creating Java entity class POJO that models the database table
   3. Mapping POJO using JPA
+  
 Configuring a Spring Boot app to publish REST API
   1. Using Spring REST annotations
   2. Using Spring Data JPA to perform all CRUD operations

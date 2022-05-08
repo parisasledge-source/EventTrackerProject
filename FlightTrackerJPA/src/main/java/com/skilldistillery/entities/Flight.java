@@ -12,22 +12,23 @@ import javax.persistence.Id;
 @Entity
 public class Flight {
 	
-//	mysql> mysql> desc flight;
-//	+-----------------------------+--------------+------+-----+---------+-------+
-//	| Field                       | Type         | Null | Key | Default | Extra |
-//	+-----------------------------+--------------+------+-----+---------+-------+
-//	| id                          | int(11)      | NO   | PRI | NULL    |       |
-//	| name                        | varchar(500) | NO   |     | NULL    |       |
-//	| scheduled_time_of_departure | datetime     | YES  |     | NULL    |       |
-//	| scheduled_time_of_arrival   | datetime     | YES  |     | NULL    |       |
-//	| actual_time_of_departure    | datetime     | YES  |     | NULL    |       |
-//	| actual_time_of_arrival      | datetime     | YES  |     | NULL    |       |
-//	| from_airport                | varchar(500) | YES  |     | NULL    |       |
-//	| to_airport                  | varchar(500) | YES  |     | NULL    |       |
-//	| airline                     | varchar(500) | YES  |     | NULL    |       |
-//	| aircraft                    | varchar(500) | YES  |     | NULL    |       |
-//	+-----------------------------+--------------+------+-----+---------+-------+
-//	
+//	mysql> desc flight;
+//	+-----------------------------+---------------+------+-----+---------+----------------+
+//	| Field                       | Type          | Null | Key | Default | Extra          |
+//	+-----------------------------+---------------+------+-----+---------+----------------+
+//	| id                          | int(11)       | NO   | PRI | NULL    | auto_increment |
+//	| name                        | varchar(500)  | NO   |     | NULL    |                |
+//	| scheduled_time_of_departure | datetime      | YES  |     | NULL    |                |
+//	| scheduled_time_of_arrival   | datetime      | YES  |     | NULL    |                |
+//	| actual_time_of_departure    | datetime      | YES  |     | NULL    |                |
+//	| actual_time_of_arrival      | datetime      | YES  |     | NULL    |                |
+//	| from_airport                | varchar(500)  | YES  |     | NULL    |                |
+//	| to_airport                  | varchar(500)  | YES  |     | NULL    |                |
+//	| airline                     | varchar(500)  | YES  |     | NULL    |                |
+//	| aircraft                    | varchar(500)  | YES  |     | NULL    |                |
+//	| price                       | decimal(10,0) | YES  |     | NULL    |                |
+//	+-----------------------------+---------------+------+-----+---------+----------------+
+//
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,6 +57,9 @@ public class Flight {
 	private String airline;
 	
 	private String aircraft;
+	
+	private double price;
+	
 	
 	// methods
 
@@ -139,9 +143,17 @@ public class Flight {
 	public String getAircraft() {
 		return aircraft;
 	}
-	
+
 	public void setAircraft(String aircraft) {
 		this.aircraft = aircraft;
+	}
+	
+	public double getPrice() {
+		return price;
+	}
+	
+	public void setPrice(double price) {
+		this.price = price;
 	}
 	
 	@Override
