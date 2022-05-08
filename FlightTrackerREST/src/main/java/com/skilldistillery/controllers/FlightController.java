@@ -52,6 +52,12 @@ public class FlightController {
 		 
 	 }
 	 
+	  @GetMapping("flights/search/price/{low}/{hi}")
+	  public List<Flight> searchByPriceRange(@PathVariable Integer low, @PathVariable Integer hi){
+		return serv.searchFlightsByPriceRange(low, hi);
+		  
+	  }
+	 
 	@PostMapping("flights/createFlight")
 	public Flight addFlight(HttpServletResponse resp, @RequestBody Flight flight) {
 		Flight newFlight = serv.create(flight);

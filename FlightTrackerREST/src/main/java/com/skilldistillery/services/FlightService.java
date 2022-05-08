@@ -10,6 +10,7 @@ public interface FlightService {
 	Flight findById(int id);
 	List<Flight> searchFlightsByKeyword(String keyword);
 	List<Flight> searchFlightsByKeyword2(String keyword2);
+	List<Flight> searchFlightsByPriceRange(double min, double max);
 	Flight create(Flight flight);
 	Flight update(Flight flight, int id);
 	void delete(int id);

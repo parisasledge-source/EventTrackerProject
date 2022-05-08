@@ -2,7 +2,7 @@
 
 ### Description
 Flight Tracker is a web application that enables a user to track information about a flight, including flight name, departure date & time, arrival date & time, departure airport, arrival airport and airline information.
-User can choose to see the list of all flights. User can search for a flight by its flight ID, flight name or airport name. User can also add a new flight information to the list to be able to track the flight information locally. Finally, user can update the newly added information to the list or delete it from the list.
+User can choose to see the list of all flights. User can search for a flight by its flight ID, flight name, airport name or flight price. User can also add a new flight information to the list to be able to track the flight information locally. Finally, user can update the newly added information to the list or delete it from the list.
 
 ### Backend process/The first section of FlightTrackerProject
 Building the entity table in MySQL workbench
@@ -17,13 +17,13 @@ Practicing in creating a JPA Project
   1. Practicing in creating entity table in MySQL workbench
   2. Practicing in creating Java entity class POJO that models the database table
   3. Mapping POJO using JPA
-  
+
 Configuring a Spring Boot app to publish REST API
   1. Using Spring REST annotations
   2. Using Spring Data JPA to perform all CRUD operations
   3. Sending and receiving JSON
 
-Paths for Postman:
+Paths for Postman Tests:
 
 Flight List: (GET)
 http://localhost:8086/api/index
@@ -36,6 +36,9 @@ http://localhost:8086/api/flights/search/1796
 
 Flight Retrieve By Keyword(Airport Name): (GET)
 http://localhost:8086/api/flights/search2/Dallas
+
+Flight Retrieve By Price Range: (GET)
+http://localhost:8086/api/flights/search/price/400/700
 
 Flight Create: (POST)
 http://localhost:8086/api/flights/createFlight

@@ -45,6 +45,11 @@ public class FlightServiceImpl implements FlightService {
 	}
 	
 	@Override
+	public List<Flight> searchFlightsByPriceRange(double min, double max) {
+		return repo.findByPriceBetween(min, max);
+	}
+	
+	@Override
 	public Flight create(Flight flight) {
 		
 		return repo.saveAndFlush(flight);
