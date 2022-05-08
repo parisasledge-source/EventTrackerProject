@@ -6,10 +6,15 @@ User can choose to see the list of all flights. User can search for a flight by 
 
 ### Backend process/The first section of FlightTrackerProject
 Building the entity table in MySQL workbench
+
 Building the Java entity class that matches the entity table in MySQL workbench
+
 Building JUnit Test class and testing the Java entity class
+
 Creating FlightRepository, FlightService, FlightServiceImplementer, and REST controller(FlightController)
+
 Creating the logic and methods in controller and service to perform the basic CRUD operations of REST API
+
 Testing these routes using Postman
 
 ### Technologies used and lessons Practiced
@@ -23,7 +28,7 @@ Configuring a Spring Boot app to publish REST API
   2. Using Spring Data JPA to perform all CRUD operations
   3. Sending and receiving JSON
 
-Paths for Postman Tests:
+### Paths for Postman Tests:
 
 Flight List: (GET)
 http://localhost:8086/api/index
