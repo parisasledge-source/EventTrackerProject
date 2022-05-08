@@ -46,6 +46,12 @@ public class FlightController {
 		  
 	  }
 	 
+	 @GetMapping("flights/search2/{keyword2}")
+	 public List<Flight> searchByKeyword2(@PathVariable String keyword2){
+		 return serv.searchFlightsByKeyword2(keyword2);
+		 
+	 }
+	 
 	@PostMapping("flights/createFlight")
 	public Flight addFlight(HttpServletResponse resp, @RequestBody Flight flight) {
 		Flight newFlight = serv.create(flight);

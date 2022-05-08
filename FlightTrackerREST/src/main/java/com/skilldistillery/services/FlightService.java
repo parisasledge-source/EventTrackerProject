@@ -9,6 +9,7 @@ public interface FlightService {
 	List<Flight> index();
 	Flight findById(int id);
 	List<Flight> searchFlightsByKeyword(String keyword);
+	List<Flight> searchFlightsByKeyword2(String keyword2);
 	Flight create(Flight flight);
 	Flight update(Flight flight, int id);
 	void delete(int id);

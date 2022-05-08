@@ -39,6 +39,12 @@ public class FlightServiceImpl implements FlightService {
 	}
 	
 	@Override
+	public List<Flight> searchFlightsByKeyword2(String keyword2) {
+		keyword2 = "%" + keyword2 +"%";
+		return repo.findByFromAirportLike(keyword2);
+	}
+	
+	@Override
 	public Flight create(Flight flight) {
 		
 		return repo.saveAndFlush(flight);

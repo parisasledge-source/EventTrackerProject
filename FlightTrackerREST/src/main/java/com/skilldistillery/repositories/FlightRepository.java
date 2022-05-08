@@ -11,6 +11,7 @@ import com.skilldistillery.entities.Flight;
 public interface FlightRepository extends JpaRepository<Flight, Integer>{
 
 	List<Flight> findByNameLike(@Param("Keyword") String keyword);
+	List<Flight> findByFromAirportLike(@Param("Keyword2") String keyword2);
 	
 	
 //	****************    My Stretch Goals:   ****************
