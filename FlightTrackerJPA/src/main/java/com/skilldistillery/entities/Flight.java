@@ -27,8 +27,9 @@ public class Flight {
 //	| airline                     | varchar(500)  | YES  |     | NULL    |                |
 //	| aircraft                    | varchar(500)  | YES  |     | NULL    |                |
 //	| price                       | decimal(10,0) | YES  |     | NULL    |                |
+//	| photo_url                   | varchar(2000) | YES  |     | NULL    |                |
 //	+-----------------------------+---------------+------+-----+---------+----------------+
-//
+
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -60,8 +61,12 @@ public class Flight {
 	
 	private double price;
 	
+	@Column(name="photo_url")
+	private String photoUrl;
+	
 	
 	// methods
+
 
 
 	public Flight() {
@@ -154,6 +159,14 @@ public class Flight {
 	
 	public void setPrice(double price) {
 		this.price = price;
+	}
+	
+	public String getPhotoUrl() {
+		return photoUrl;
+	}
+	
+	public void setPhotoUrl(String photoUrl) {
+		this.photoUrl = photoUrl;
 	}
 	
 	@Override
