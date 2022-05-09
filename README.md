@@ -1,26 +1,26 @@
 ## FlightTrackerProject
 
 ### Description
-Flight Tracker is a web application that enables a user to track information about a flight, including flight name, departure date & time, arrival date & time, departure airport, arrival airport and airline information.
-User can choose to see the list of all flights. User can search for a flight by its flight ID, flight name, airport name or flight price. User can also add a new flight information to the list to be able to track the flight information locally. Finally, user can update the newly added information to the list or delete it from the list.
+Flight Tracker is a web application that enables a user to track information about a flight, including flight name, departure date & time, arrival date & time, departure airport, arrival airport, price and airline information.
+User can choose to see the list of all flights. User can search for a flight by its flight ID, flight name, airport name or price. User can also add a new flight information to the list to be able to track the new flight information. Finally, user can update the newly added information or delete it from the list.
 
 ### Backend process/The first section of FlightTrackerProject
-Building the entity table in MySQL workbench
+Building flight entity table in MySQL workbench
 
-Building the Java entity class that matches the entity table in MySQL workbench
+Building Flight Java entity class which matches the flight entity table in MySQL workbench
 
-Building JUnit Test class and testing the Java entity class
+Building JUnit Test (FlightTest) and testing Flight Java entity class
 
-Creating FlightRepository, FlightService, FlightServiceImplementer, and REST controller(FlightController)
+Creating FlightRepository, FlightService, FlightServiceImplementer, and FlightController
 
 Creating the logic and methods in controller and service to perform the basic CRUD operations of REST API
 
 Testing these routes using Postman
 
-### Technologies used and lessons Practiced
-Practicing in creating a JPA Project
-  1. Practicing in creating entity table in MySQL workbench
-  2. Practicing in creating Java entity class POJO that models the database table
+### Technologies used and lessons learned
+Creating a JPA Project
+  1. Creating entity table in MySQL workbench
+  2. Creating Java entity class POJO that models the database table
   3. Mapping POJO using JPA
 
 Configuring a Spring Boot app to publish REST API
