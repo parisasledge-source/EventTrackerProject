@@ -17,9 +17,9 @@ public interface FlightRepository extends JpaRepository<Flight, Integer>{
 //	****************    My Stretch Goals:   ****************
 //	List<Flight> findByStdLike(@Param("d") LocalDateTime date);
 	
-//	List<Flight> findByStdBetween(
-//            //@Param("s") 
-//            LocalDateTime start,
-//            //@Param("e") 
-//            LocalDateTime end);
+	List<Flight> findByStdBetween(
+            //@Param("s") 
+            LocalDateTime start,
+            //@Param("e") 
+            LocalDateTime end);
 }

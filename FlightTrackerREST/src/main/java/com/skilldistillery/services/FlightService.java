@@ -18,5 +18,5 @@ public interface FlightService {
 	
 //	****************    My Stretch Goals:   ****************
 //	List<Flight> searchFlightsByStd(LocalDateTime d);
-//	List<Flight> searchFlightsByStdRange(LocalDateTime st, LocalDateTime en);
+	List<Flight> searchFlightsByStdRange(LocalDateTime st, LocalDateTime en);
 }

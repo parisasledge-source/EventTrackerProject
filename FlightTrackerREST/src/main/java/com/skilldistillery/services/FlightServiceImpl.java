@@ -80,8 +80,8 @@ public class FlightServiceImpl implements FlightService {
 //		return repo.findByStdLike(date);
 //	}
 	
-//	@Override
-//	public List<Flight> searchFlightsByStdRange(LocalDateTime st, LocalDateTime en) {
-//		return repo.findByStdBetween(st, en);
-//	}
+	@Override
+	public List<Flight> searchFlightsByStdRange(LocalDateTime st, LocalDateTime en) {
+		return repo.findByStdBetween(st, en);
+	}
 }

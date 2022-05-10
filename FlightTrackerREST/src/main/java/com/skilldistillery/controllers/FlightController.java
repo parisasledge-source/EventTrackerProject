@@ -89,9 +89,11 @@ public class FlightController {
 //		 
 //	 }
 	
-//	@GetMapping("flights/search/std/{s}/{e}")
-//	public List<Flight> searchFlightsByStdRange(@PathVariable LocalDateTime s, @PathVariable LocalDateTime e){
-//		return serv.searchFlightsByStdRange(s, e);
-//		
-//	}
+	@GetMapping("flights/search/std/{s}/{e}")
+	public List<Flight> searchFlightsByStdRange(@PathVariable String s, @PathVariable String e){
+		LocalDateTime start = LocalDateTime.parse(s);
+		LocalDateTime end = LocalDateTime.parse(e);
+		return serv.searchFlightsByStdRange(start, end);
+		
+	}
 }
