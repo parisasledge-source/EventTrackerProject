@@ -8,6 +8,9 @@
 </head>
 <body>
 	<h1>Flight Tracker</h1>
+	
+	<div id='flights'>
+  	</div>
 
 	<form name="flightForm">
 		<input type="number" name="flightId">
@@ -15,8 +18,45 @@
 	</form>
 	<div id="output">
 		<div id="flightData"></div>
-		<!-- <div id="actorData"></div> -->
 	</div>
-
+	
+	<form name="createFlightTrackForm" id="createFlightTrackForm">
+	    Flight Name: <input type="text" name="name">
+	 
+ 	    Scheduled Time of Departure: <input type="text" name="std">
+	    Scheduled Time of Arrival: <input type="text" name="sta">
+	    Actual Time of Departure: <input type="text" name="atd">
+	    Actual Time of Arrival: <input type="text" name="status"> 
+	 
+	    Departure Airport: <input type="text" name="fromAirport">
+	    Arrival Airport: <input type="text" name="toAirport">
+	    
+	    airline: <input type="text" name="airline">
+	    aircraft: <input type="text" name="aircraft">
+	    price: <input type="number" name="price">
+	    
+	    <button name="submit">Create Flight Track</button>
+  	</form>
+  	
+  	<form name="updateFlightTrackForm" id="updateFlightTrackForm">
+  		Flight ID:<input type="number" name="flightId">
+  		
+	    Flight Name: <input type="text" name="name">
+	 
+ 	    Scheduled Time of Departure: <input type="text" name="std">
+	    Scheduled Time of Arrival: <input type="text" name="sta">
+	    Actual Time of Departure: <input type="text" name="atd">
+	    Actual Time of Arrival: <input type="text" name="status"> 
+	 
+	    Departure Airport: <input type="text" name="fromAirport">
+	    Arrival Airport: <input type="text" name="toAirport">
+	    
+	    airline: <input type="text" name="airline">
+	    aircraft: <input type="text" name="aircraft">
+	    price: <input type="number" name="price">
+	    
+	    <button name="submit">Update Flight Track</button>
+  	</form>
+  	
 </body>
 </html>
