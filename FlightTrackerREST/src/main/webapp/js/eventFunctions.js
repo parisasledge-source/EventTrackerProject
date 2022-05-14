@@ -16,11 +16,16 @@ function init() {
 		
 		getFlights();
 	});
+	document.deleteFlightTrackForm.submit.addEventListener('click', function(event) {
+		event.preventDefault();
+		let flightId = document.deleteFlightTrackForm.flightId.value;
+		if (!isNaN(flightId) && flightId > 0) {
+			deleteFlightTrack(flightId);
+		}
+	});
 	console.log("in init()");
-	document.createFlightTrackForm.submit.addEventListener('click', createFlightTrack());
-	document.updateFlightTrackForm.submit.addEventListener('click', updateFlightTrack());
-	document.deleteFlightTrackForm.submit.addEventListener('click', deleteFlightTrack());
-	//document.flightsForm.lookup.addEventListener('click', getFlights());
+	document.createFlightTrackForm.submit.addEventListener('click', createFlightTrack);
+	document.updateFlightTrackForm.submit.addEventListener('click', updateFlightTrack);
 }
 
 function getFlights() {
@@ -217,23 +222,23 @@ function updateFlightTrack(e) {
 	xhr.send(JSON.stringify(flight));
 }
 
-function deleteFlightTrack(e) {
-	e.preventDefault();
+function deleteFlightTrack(flightId) {
+	//e.preventDefault();
 	//console.log('Hello create Flight'); 
-
+	
 	let xhr = new XMLHttpRequest();
-	xhr.open('DELETE', 'api/flights/' + document.deleteFlightTrackForm.flightId.value, true);
-
+	xhr.open('DELETE', 'api/flights/' + flightId, true);
 	xhr.setRequestHeader("Content-type", "application/json"); // Specify JSON request body
-
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4) {
 			if (xhr.status == 200 || xhr.status == 201) { // Ok or Created
-				flight.reset();
-				let data = JSON.parse(xhr.responseText);
 				//flight.reset();
+				let data = JSON.parse(xhr.responseText);
 				// console.log(data);
-				displayFlight(data);
+				//displayFlight(data);
+				//delete data;
+				//delete flight.name;
+				//console.log(flight.name);
 			}
 			else {
 				console.error("DELETE request failed.");
@@ -241,20 +246,6 @@ function deleteFlightTrack(e) {
 			}
 		}
 	}
-
-	let flight = {
-		name: document.deleteFlightTrackForm.name.value,
-		std: document.deleteFlightTrackForm.std.value,
-		sta: document.deleteFlightTrackForm.sta.value,
-		atd: document.deleteFlightTrackForm.atd.value,
-		status: document.deleteFlightTrackForm.status.value,
-		fromAirport: document.deleteFlightTrackForm.fromAirport.value,
-		toAirport: document.deleteFlightTrackForm.toAirport.value,
-		airline: document.deleteFlightTrackForm.airline.value,
-		aircraft: document.deleteFlightTrackForm.aircraft.value,
-		price: document.deleteFlightTrackForm.price.value
-	};
-	console.log(flight);
-	xhr.send(JSON.stringify(flight));
-	//flight.reset();
+	xhr.send();
 }
+
