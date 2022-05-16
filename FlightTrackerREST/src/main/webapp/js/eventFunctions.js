@@ -70,14 +70,45 @@ function displayFlights(flights) {
 
 	flights.forEach(function(val, ind, arr) {
 		var tr = document.createElement('tr');
+		var id = document.createElement('td');
 		var name = document.createElement('td');
+		var std = document.createElement('td');
+		var sta = document.createElement('td');
+		var atd = document.createElement('td');
+		var status = document.createElement('td');
 		var fromAirport = document.createElement('td');
+		var toAirport = document.createElement('td');
+		var airline = document.createElement('td');
+		var aircraft = document.createElement('td');
+		var price = document.createElement('td');
+		var photoUrl = document.createElement('td');
 
+		id.textContent = val.id;
 		name.textContent = val.name;
+		std.textContent = val.std;
+		sta.textContent = val.sta;
+		atd.textContent = val.atd;
+		status.textContent = val.status;
 		fromAirport.textContent = val.fromAirport;
+		toAirport.textContent = val.toAirport;
+		airline.textContent = val.airline;
+		aircraft.textContent = val.aircraft;
+		price.textContent = val.price;
+		photoUrl.textContent = val.photoUrl;
 
+		tr.appendChild(id);
 		tr.appendChild(name);
+		tr.appendChild(std);
+		tr.appendChild(sta);
+		tr.appendChild(atd);
+		tr.appendChild(status);
 		tr.appendChild(fromAirport);
+		tr.appendChild(toAirport);
+		tr.appendChild(airline);
+		tr.appendChild(aircraft);
+		tr.appendChild(price);
+		tr.appendChild(photoUrl);
+		
 		tbody.appendChild(tr);
 	});
 	table.appendChild(tbody);
@@ -121,6 +152,7 @@ function displayFlight(flight) {
 	dataDiv.appendChild(h2);
 
 	let ul = document.createElement('ul');
+	//let name = document.createElement('li');
 	let fromAirport = document.createElement('li');
 	let toAirport = document.createElement('li');
 	let std = document.createElement('li');
@@ -131,6 +163,7 @@ function displayFlight(flight) {
 	let aircraft = document.createElement('li');
 	let price = document.createElement('li');
 
+	//name.textContent = flight.name;
 	fromAirport.textContent = flight.fromAirport;
 	toAirport.textContent = flight.toAirport;
 	std.textContent = flight.std;
@@ -141,6 +174,7 @@ function displayFlight(flight) {
 	aircraft.textContent = flight.aircraft;
 	price.textContent = flight.price;
 
+	//ul.appendChild(name);
 	ul.appendChild(fromAirport);
 	ul.appendChild(toAirport);
 	ul.appendChild(std);
