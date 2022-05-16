@@ -13,7 +13,7 @@ function init() {
 	});
 	document.flightsForm.lookup.addEventListener('click', function(event) {
 		event.preventDefault();
-		
+
 		getFlights();
 	});
 	document.deleteFlightTrackForm.submit.addEventListener('click', function(event) {
@@ -26,6 +26,7 @@ function init() {
 	console.log("in init()");
 	document.createFlightTrackForm.submit.addEventListener('click', createFlightTrack);
 	document.updateFlightTrackForm.submit.addEventListener('click', updateFlightTrack);
+	//document.totalAmountForm.lookup.addEventListener('click', totalAmountSold);
 }
 
 function getFlights() {
@@ -49,12 +50,12 @@ function displayFlights(flights) {
 	let flightList = document.getElementById('flightList');
 	flightList.textContent = "";
 
-	for (let i = 0; i < flights.length; i++) {
-		let flightInfo = flights[i].name + ": " + flights[i].fromAirport;
-		let li = document.createElement('li');
-		li.textContent = flightInfo;
-		flightList.appendChild(li);
-	}
+	//for (let i = 0; i < flights.length; i++) {
+		//let flightInfo = flights[i].name + ": " + flights[i].fromAirport;
+		//let li = document.createElement('li');
+		//li.textContent = flightInfo;
+		//flightList.appendChild(li);
+	//}
 	var flightsDiv = document.getElementById('flights');
 	var table = document.createElement('table');
 	table.id = 'flightsTable';
@@ -81,6 +82,15 @@ function displayFlights(flights) {
 	});
 	table.appendChild(tbody);
 	flightsDiv.appendChild(table);
+
+	//let allFlights = document.getElementById('numberOfFlights');
+	let amountOfFlights = flights.length;
+	let h1 = document.createElement('h1');
+	h1.textContent = "Total Number of Flights " + amountOfFlights;
+	flightsDiv.appendChild(h1);
+	//allFlights.appendChild(h1);
+
+
 }
 
 function getFlight(flightId) {
@@ -158,7 +168,7 @@ function createFlightTrack(e) {
 			if (xhr.status == 200 || xhr.status == 201) { // Ok or Created
 				let data = JSON.parse(xhr.responseText);
 				// console.log(data);
-				displayFlight(data);
+				getFlights(data);
 			}
 			else {
 				console.error("POST request failed.");
@@ -197,7 +207,7 @@ function updateFlightTrack(e) {
 			if (xhr.status == 200 || xhr.status == 201) { // Ok or Created
 				let data = JSON.parse(xhr.responseText);
 				// console.log(data);
-				displayFlight(data);
+				getFlights(data);
 			}
 			else {
 				console.error("PUT request failed.");
@@ -225,7 +235,7 @@ function updateFlightTrack(e) {
 function deleteFlightTrack(flightId) {
 	//e.preventDefault();
 	//console.log('Hello create Flight'); 
-	
+
 	let xhr = new XMLHttpRequest();
 	xhr.open('DELETE', 'api/flights/' + flightId, true);
 	xhr.setRequestHeader("Content-type", "application/json"); // Specify JSON request body
@@ -234,11 +244,7 @@ function deleteFlightTrack(flightId) {
 			if (xhr.status == 200 || xhr.status == 201) { // Ok or Created
 				//flight.reset();
 				let data = JSON.parse(xhr.responseText);
-				// console.log(data);
-				//displayFlight(data);
-				//delete data;
-				//delete flight.name;
-				//console.log(flight.name);
+				getFlights(data);
 			}
 			else {
 				console.error("DELETE request failed.");
@@ -248,4 +254,6 @@ function deleteFlightTrack(flightId) {
 	}
 	xhr.send();
 }
+
+
 

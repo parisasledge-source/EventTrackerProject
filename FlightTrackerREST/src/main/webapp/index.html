@@ -8,18 +8,18 @@
 </head>
 <body>
 	<h1>Flight Tracker</h1>
-	
+
 	<form name="flightsForm">
 		<button name="lookup">Find All Flights</button>
 	</form>
 	<br>
 	<br>
-	<div id='flightList'>
-  	</div>
+	<div id='flights'></div>
 	
+	<div id='flightList'></div>
+
 	<form name="flightForm">
-		<input type="number" name="flightId">
-		<br>
+		<input type="number" name="flightId"> <br>
 		<button name="lookup">Find Flight by Id</button>
 	</form>
 	<div id="output">
@@ -28,72 +28,50 @@
 	<br>
 	<br>
 	<form name="createFlightTrackForm" id="createFlightTrackForm">
-	    Flight Name: <input type="text" name="name">
-	 	<br>
- 	    Scheduled Time of Departure: <input type="text" name="std">
- 	    <br>
-	    Scheduled Time of Arrival: <input type="text" name="sta">
-	    <br>
-	    Actual Time of Departure: <input type="text" name="atd">
-	    <br>
-	    Actual Time of Arrival: <input type="text" name="status"> 
-	 	<br>
-	    Departure Airport: <input type="text" name="fromAirport">
-	    <br>
-	    Arrival Airport: <input type="text" name="toAirport">
-	    <br>
-	    airline: <input type="text" name="airline">
-	    <br>
-	    aircraft: <input type="text" name="aircraft">
-	    <br>
-	    price: <input type="number" name="price">
-	    <br>
-	    <button name="submit">Create Flight Track</button>
-  	</form>
-  	
-  	<br>
-  	<br>
-  	<form name="updateFlightTrackForm" id="updateFlightTrackForm">
-  		Flight ID:<input type="number" name="flightId">
-  		<br>
-	    Flight Name: <input type="text" name="name">
-	 	<br>
- 	    Scheduled Time of Departure: <input type="text" name="std">
- 	    <br>
-	    Scheduled Time of Arrival: <input type="text" name="sta">
-	    <br>
-	    Actual Time of Departure: <input type="text" name="atd">
-	    <br>
-	    Actual Time of Arrival: <input type="text" name="status"> 
-	 	<br>
-	    Departure Airport: <input type="text" name="fromAirport">
-	    <br>
-	    Arrival Airport: <input type="text" name="toAirport">
-	    <br>
-	    airline: <input type="text" name="airline">
-	    <br>
-	    aircraft: <input type="text" name="aircraft">
-	    <br>
-	    price: <input type="number" name="price">
-	    <br>
-	    <button name="submit">Update Flight Track</button>
-  	</form>
-  	
-  	<br>
-  	<br>
-  	<form name="deleteFlightTrackForm" id="deleteFlightTrackForm">
-  		Flight ID:<input type="number" name="flightId">
-	    <br>
-	    <button name="submit">Delete Flight Track</button>
-  	</form>
-  	
-  	<!-- <form name="flightsForm">
-		<button name="lookup">Find All Flights</button>
+		Flight Name: <input type="text" name="name"> <br>
+		Scheduled Time of Departure: <input type="text" name="std"> <br>
+		Scheduled Time of Arrival: <input type="text" name="sta"> <br>
+		Actual Time of Departure: <input type="text" name="atd"> <br>
+		Actual Time of Arrival: <input type="text" name="status"> <br>
+		Departure Airport: <input type="text" name="fromAirport"> <br>
+		Arrival Airport: <input type="text" name="toAirport"> <br>
+		airline: <input type="text" name="airline"> <br>
+		aircraft: <input type="text" name="aircraft"> <br> price:
+		<input type="number" name="price"> <br>
+		<button name="submit">Create Flight Track</button>
 	</form>
+
 	<br>
 	<br>
-	<div id='flightList'>
+	<form name="updateFlightTrackForm" id="updateFlightTrackForm">
+		Flight ID:<input type="number" name="flightId"> <br>
+		Flight Name: <input type="text" name="name"> <br>
+		Scheduled Time of Departure: <input type="text" name="std"> <br>
+		Scheduled Time of Arrival: <input type="text" name="sta"> <br>
+		Actual Time of Departure: <input type="text" name="atd"> <br>
+		Actual Time of Arrival: <input type="text" name="status"> <br>
+		Departure Airport: <input type="text" name="fromAirport"> <br>
+		Arrival Airport: <input type="text" name="toAirport"> <br>
+		airline: <input type="text" name="airline"> <br>
+		aircraft: <input type="text" name="aircraft"> <br> price:
+		<input type="number" name="price"> <br>
+		<button name="submit">Update Flight Track</button>
+	</form>
+
+	<br>
+	<br>
+	<form name="deleteFlightTrackForm" id="deleteFlightTrackForm">
+		Flight ID:<input type="number" name="flightId"> <br>
+		<button name="submit">Delete Flight Track</button>
+	</form>
+	<!-- 	<br>
+  	<br>
+  	<form name="totalAmountForm">
+		<button name="lookup">Total Amount of Tickets Purchased</button>
+	</form>
+	
+	<div id='flights'>
   	</div> -->
-  	
+
 </body>
 </html>
