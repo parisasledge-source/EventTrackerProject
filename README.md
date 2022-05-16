@@ -66,6 +66,8 @@ Creating eventFunction.js file and sourcing this javascript file to the html fil
 
 Creating getFlights() function which executes an XMLHttpRequest to get all of the flights and displays the list of data using a table
 
+Creating getFlight() function which executes an XMLHttpRequest to get a flight information by ID search and displays it using a list
+
 Creating 'createFlightTrackForm' form with a submit button in the html file and creating a POST request ('POST', 'api/flights/createFlight') in the javascript file (When this submit button is pressed it builds a JSON object from the form field values, and sends it to the POST request, and then it calls 'displayFlights(flights)' function to reload a list of all the flights which includes the newly created flight)
 
 Creating 'updateFlightTrackForm' with a submit button in the html file and creating a PUT request ('PUT', 'api/flights/') in the javascript file (This submit button builds a JSON object, and sends it to the PUT request, and then it calls 'displayFlights(flights)' function to reload a list of all flights which includes the newly updated flight)
@@ -73,3 +75,16 @@ Creating 'updateFlightTrackForm' with a submit button in the html file and creat
 Creating 'deleteFlightTrackForm' with a submit button in the html file and creating a DELETE request in the javascript file ('DELETE', 'api/flights/') that would delete the selected flight
 
 Adding a function that uses the response data to present the data in the form of "Total Number of Flights" (Every time a new object is added to the list the total number of flight is increased by one and displayed with a reload of the list of all the flights)
+
+### Technologies used
+1. Adding java scripts to a web application
+2. Sending asynchronous requests to Java controllers with JavaScript's XMLHttpRequest
+3. Consuming and parsing JSON responses with JavaScript
+4. Building HTML with JavaScript
+5. Sending POST/PUT/DELETE requests with XMLHttpRequest
+
+### lessons learned/Practices
+1. Implementing full CRUD
+2. Performing all interactions with the database RESTfully
+3. Using Javascript to access data and manipulating the DOM
+4. Presenting the aggregated data in an additional format
