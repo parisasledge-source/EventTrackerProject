@@ -49,9 +49,9 @@ export class HomeComponent implements OnInit {
     return this.flight.length;
   }
 
-  // displayFlight(flight: Flight) {
-  //   this.selected = flight;
-  // }
+  displayFlight(flight: Flight) {
+    //this.selected = flight;
+  }
 
   // displayTable(){
   //   this.selected = null;
