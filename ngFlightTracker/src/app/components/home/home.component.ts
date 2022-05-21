@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
   display = false;
 
   newFlight: Flight = new Flight();
+  tempFlight: Flight = new Flight();
 
   flight: Flight[] = [];
   //flight1 = new Flight();
@@ -66,11 +67,22 @@ export class HomeComponent implements OnInit {
 
   }
 
-  onSubmit() {
-    //this.flight.push(this.newFlight);
-    this.flightTrackerService.create(this.newFlight);
-    this.newFlight = new Flight();
-    //this.flight = this.flightTrackerService.index();
+  updateFlight(flight: Flight, id: number){
+    this.flightTrackerService.update(flight, id).subscribe(
+      data => {
+        this.reload();
+        //this.editFlight = null;
+        Object.assign({}, flight);
+      },
+      err => console.error(err)
+    );
+
   }
 
+  deleteFlight(id: number) {
+    this.flightTrackerService.destroy(id).subscribe(
+      data => this.reload(),
+      err => console.error(err)
+    );
+  }
 }

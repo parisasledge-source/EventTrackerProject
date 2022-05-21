@@ -14,8 +14,8 @@ export class FlightTrackerService {
 
   private flight: Flight[] =
   [
-    new Flight('AA2477', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', 'Seattle', 'Dallas',  'American Airlines', 'aa', 611.39, 'https://www.airport-technology.com/wp-content/uploads/sites/14/2017/10/main-1262.jpg'),
-    new Flight('AA2477', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', 'Seattle', 'Dallas',  'American Airlines', 'aa', 611.39, 'https://www.airport-technology.com/wp-content/uploads/sites/14/2017/10/main-1262.jpg')
+    // new Flight('AA2477', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', 'Seattle', 'Dallas',  'American Airlines', 'aa', 611.39, 'https://www.airport-technology.com/wp-content/uploads/sites/14/2017/10/main-1262.jpg'),
+    // new Flight('AA2477', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', 'Seattle', 'Dallas',  'American Airlines', 'aa', 611.39, 'https://www.airport-technology.com/wp-content/uploads/sites/14/2017/10/main-1262.jpg')
   ];
 
   private url = environment.baseUrl + 'api/flights';
@@ -56,7 +56,8 @@ export class FlightTrackerService {
         'Content-type': 'application/json'
       }
     };
-    return this.http.post<Flight>(this.url, newFlight, httpOptions).pipe(
+    return this.http.post<Flight>(this.url, newFlight, httpOptions)
+    .pipe(
       catchError((err: any) => {
         console.log(err);
         return throwError('FlightService: error creating Flight');
@@ -65,5 +66,26 @@ export class FlightTrackerService {
     )
   }
 
+  update(updateFlight: Flight, id: number) {
+    return this.http.put<Flight>(this.url + "/" + updateFlight.id, updateFlight)
+    .pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError('FlightService: error updating Flight');
+
+      })
+    );
+  }
+
+  destroy(id: number) {
+    return this.http.delete<void>(this.url + "/" + id)
+    .pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError('FlightService: error deleting');
+
+      })
+    )
+  }
 
 }

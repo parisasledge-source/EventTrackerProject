@@ -1,4 +1,5 @@
 export class Flight {
+  id: number;
   name: string;
   std: string;
   sta: string;
@@ -12,6 +13,7 @@ export class Flight {
   photoUrl: string;
 
   constructor(
+    id: number = 0,
   name: string ='',
   std: string ='',
   sta: string ='',
@@ -24,6 +26,7 @@ export class Flight {
   price: number = 0,
   photoUrl: string= ''
   ){
+    this.id = id;
     this.name = name;
     this.std = std;
     this.sta = sta;
