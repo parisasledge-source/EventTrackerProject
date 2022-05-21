@@ -22,7 +22,16 @@ export class HomeComponent implements OnInit {
     search: 'Search'
   };
   //===================
-  flight = new Flight();
+  display = true;
+
+  newFlight: Flight = new Flight();
+  flight =
+  [
+    new Flight('AA2477', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', 'Seattle', 'Dallas',  'American Airlines', 'aa', 611.39, 'https://www.airport-technology.com/wp-content/uploads/sites/14/2017/10/main-1262.jpg'),
+    new Flight('AA2477', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', 'Seattle', 'Dallas',  'American Airlines', 'aa', 611.39, 'https://www.airport-technology.com/wp-content/uploads/sites/14/2017/10/main-1262.jpg')
+  ];
+
+  flight1 = new Flight();
 
   constructor() { }
 

@@ -12,8 +12,7 @@
 <!-- <img src="https://www.omanairports.co.om/images/media_center.jpg" alt="PhotoUrl"> -->
 <img src="https://mysterioustrip.com/wp-content/uploads/2020/02/virgin-2721333_1920-1-1024x399.jpg" alt="PhotoUrl">
 
-<h1>Flight Form</h1>
-
+<!-- <h1>Create Flight</h1>
 <form class="row g-3">
   <div class="col-md-6">
     Flight Name: <input type="text" name="name" [(ngModel)]="flight.name" /><br>
@@ -27,8 +26,39 @@
     Aircraft:<input type="text" name="aircraft" [(ngModel)]="flight.aircraft" /><br>
     Price: <input type="text" name="price" [(ngModel)]="flight.price" /><br>
     Photo URL: <input type="text" name="photoUrl" [(ngModel)]="flight.photoUrl" /><br>
-  <!-- <input type="submit" (click)="onSubmit()"> -->
+  <input type="submit" (click)="onSubmit()">
 </div>
 </form>
 
-<h5>{{flight | json}}</h5>
+<h5>{{flight | json}}</h5> -->
+
+<!-- <form>
+  <input type="text" name="name" placeholder="Name" [(ngModel)]="newFlight.name"/><br />
+  <input type="text" name="std" placeholder="Scheduled Time of Departure" [(ngModel)]="newFlight.std"/><br />
+  <input type="text" name="sta" placeholder="Scheduled Time of Arrival" [(ngModel)]="newFlight.sta"/><br />
+  <input type="text" name="atd" placeholder="Actual Time of Departure" [(ngModel)]="newFlight.atd"/><br />
+  <input type="text" name="status" placeholder="Status" [(ngModel)]="newFlight.status"/><br />
+  <input type="text" name="fromAirport" placeholder="Departure Airport" [(ngModel)]="newFlight.fromAirport"/><br />
+  <input type="text" name="toAirport" placeholder="Arrival Airport" [(ngModel)]="newFlight.toAirport"/><br />
+  <input type="text" name="price" placeholder="Price" [(ngModel)]="newFlight.price" /><br />
+  <input type="text" name="photoUrl" placeholder="Photo URL" [(ngModel)]="newFlight.photoUrl"/><br />
+  <input type="submit" name="submit" value="Add Item" (click)="onSubmit()"/>
+</form> -->
+
+<div *ngIf= "display">
+  <h2>Hello</h2>
+</div>
+
+<div *ngFor="let flight1 of flight">
+  <p>{{flight1.name}}</p>
+  <p>{{flight1.std}}</p>
+  <p>{{flight1.sta}}</p>
+  <p>{{flight1.atd}}</p>
+  <p>{{flight1.status}}</p>
+  <p>{{flight1.fromAirport}}</p>
+  <p>{{flight1.toAirport}}</p>
+  <p>{{flight1.airline}}</p>
+  <p>{{flight1.aircraft}}</p>
+  <p>{{flight1.price}}</p>
+  <p>{{flight1.photoUrl}}</p>
+</div>
