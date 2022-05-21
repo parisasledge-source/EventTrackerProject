@@ -16,35 +16,49 @@
 <!-- <h1>Create Flight</h1>
 <form class="row g-3">
   <div class="col-md-6">
-    Flight Name: <input type="text" name="name" [(ngModel)]="flight.name" /><br>
-    Scheduled Time of Departure: <input type="datetime-local" name="std" [(ngModel)]="flight.std"/><br>
-    Scheduled Time of Arrival: <input type="datetime-local" name="sta" [(ngModel)]="flight.sta"/><br>
-    Actual Time of Departure:<input type="datetime-local" name="atd" [(ngModel)]="flight.atd"/><br>
-    Status: <input type="datetime-local" name="status" [(ngModel)]="flight.status"/><br>
-    Departure Airport: <input type="text" name="fromAirport" [(ngModel)]="flight.fromAirport" /><br>
-    Arrival Airport: <input type="text" name="toAirport" [(ngModel)]="flight.toAirport" /><br>
-    Airline: <input type="text" name="airline" [(ngModel)]="flight.airline" /><br>
-    Aircraft:<input type="text" name="aircraft" [(ngModel)]="flight.aircraft" /><br>
-    Price: <input type="text" name="price" [(ngModel)]="flight.price" /><br>
-    Photo URL: <input type="text" name="photoUrl" [(ngModel)]="flight.photoUrl" /><br>
+    Flight Name: <input type="text" name="name" [(ngModel)]="flight1.name" /><br>
+    Scheduled Time of Departure: <input type="datetime-local" name="std" [(ngModel)]="flight1.std"/><br>
+    Scheduled Time of Arrival: <input type="datetime-local" name="sta" [(ngModel)]="flight1.sta"/><br>
+    Actual Time of Departure:<input type="datetime-local" name="atd" [(ngModel)]="flight1.atd"/><br>
+    Status: <input type="datetime-local" name="status" [(ngModel)]="flight1.status"/><br>
+    Departure Airport: <input type="text" name="fromAirport" [(ngModel)]="flight1.fromAirport" /><br>
+    Arrival Airport: <input type="text" name="toAirport" [(ngModel)]="flight1.toAirport" /><br>
+    Airline: <input type="text" name="airline" [(ngModel)]="flight1.airline" /><br>
+    Aircraft:<input type="text" name="aircraft" [(ngModel)]="flight1.aircraft" /><br>
+    Price: <input type="text" name="price" [(ngModel)]="flight1.price" /><br>
+    Photo URL: <input type="text" name="photoUrl" [(ngModel)]="flight1.photoUrl" /><br>
   <input type="submit" (click)="onSubmit()">
 </div>
-</form>
+</form> -->
 
-<h5>{{flight | json}}</h5> -->
+<!-- <h5>{{flight | json}}</h5> -->
 
 <h1>Create Flight</h1>
 <form>
-  <input type="text" name="name" placeholder="Name" [(ngModel)]="newFlight.name"/><br />
-  <input type="text" name="std" placeholder="Scheduled Time of Departure" [(ngModel)]="newFlight.std"/><br />
-  <input type="text" name="sta" placeholder="Scheduled Time of Arrival" [(ngModel)]="newFlight.sta"/><br />
-  <input type="text" name="atd" placeholder="Actual Time of Departure" [(ngModel)]="newFlight.atd"/><br />
-  <input type="text" name="status" placeholder="Status" [(ngModel)]="newFlight.status"/><br />
-  <input type="text" name="fromAirport" placeholder="Departure Airport" [(ngModel)]="newFlight.fromAirport"/><br />
-  <input type="text" name="toAirport" placeholder="Arrival Airport" [(ngModel)]="newFlight.toAirport"/><br />
+  <p>Flight Name:</p>
+  <input type="text" name="name" placeholder="AA0000" [(ngModel)]="newFlight.name"/>
+  <br/>
+  <br/>
+  <p>Scheduled Time:</p>
+  Departure: <input type="datetime-local" name="std" placeholder="Scheduled Time of Departure" [(ngModel)]="newFlight.std"/>
+  Arrival: <input type="datetime-local" name="sta" placeholder="Scheduled Time of Arrival" [(ngModel)]="newFlight.sta"/>
+  <br/>
+  <br/>
+  <p>Actual Time:</p>
+  Departure: <input type="datetime-local" name="atd" placeholder="Actual Time of Departure" [(ngModel)]="newFlight.atd"/>
+  Arrival: <input type="datetime-local" name="status" placeholder="Status" [(ngModel)]="newFlight.status"/><br />
+  <br/>
+  <p>Airport:</p>
+  Departure: <input type="text" name="fromAirport" placeholder="Airport name" [(ngModel)]="newFlight.fromAirport"/>
+  Arrival: <input type="text" name="toAirport" placeholder="Airport name" [(ngModel)]="newFlight.toAirport"/><br />
+  <br/>
+  <p>Price:</p>
   <input type="text" name="price" placeholder="Price" [(ngModel)]="newFlight.price" /><br />
-  <input type="text" name="photoUrl" placeholder="Photo URL" [(ngModel)]="newFlight.photoUrl"/><br />
-  <input type="submit" name="submit" value="Add Item" (click)="onSubmit()"/>
+  <br/>
+  <p>Photo URL:</p>
+  <input type="text" name="photoUrl" placeholder="http://your_photo_url" [(ngModel)]="newFlight.photoUrl"/><br />
+  <br/>
+  <input type="submit" name="submit" value="Add Flight" (click)="onSubmit()"/>
 </form>
 
 <div *ngIf= "display">
