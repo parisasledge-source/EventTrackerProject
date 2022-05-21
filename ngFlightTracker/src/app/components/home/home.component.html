@@ -3,24 +3,22 @@
 <h1 [style.color] = "color1">{{title}}</h1>
 <h3 [style.color] = "color2">{{subTitle}}</h3>
 <br>
-<br>
 <!-- //========================= -->
-<h1 [style.color] = "color1">{{header}}</h1>
+<!-- <h1 [style.color] = "color1">{{header}}</h1>
 <h3 [style.color] = "color2">{{flighInfo.home}}</h3>
 <h3 [style.color] = "color2">{{flighInfo.about}}</h3>
-<h3 [style.color] = "color2">{{flighInfo.search}}</h3>
+<h3 [style.color] = "color2">{{flighInfo.search}}</h3> -->
 <!-- //========================== -->
 <!-- <img src="https://www.omanairports.co.om/images/media_center.jpg" alt="PhotoUrl"> -->
 <img src="https://mysterioustrip.com/wp-content/uploads/2020/02/virgin-2721333_1920-1-1024x399.jpg" alt="PhotoUrl">
 
 
-<h3>Number of Flights: {{getNumberOfFlights()}}</h3>
+<h3 [style.color] = "color2">Number of Flights: {{getNumberOfFlights()}}</h3>
 
 <!-- //=========== -->
-<h1>Create Flight</h1>
+<h1 [style.color] = "color1">Create Flight</h1>
 <form>
-  <p>Flight Name:</p>
-  <input type="text" name="name" placeholder="AA0000" [(ngModel)]="newFlight.name"/>
+  Flight: <input type="text" name="name" placeholder="AA0000" [(ngModel)]="newFlight.name"/>
   <br/>
   <br/>
   <p>Scheduled Time:</p>
@@ -36,28 +34,23 @@
   Departure: <input type="text" name="fromAirport" placeholder="Airport name" [(ngModel)]="newFlight.fromAirport"/>
   Arrival: <input type="text" name="toAirport" placeholder="Airport name" [(ngModel)]="newFlight.toAirport"/><br />
   <br/>
-  <p>Price:</p>
-  <input type="text" name="price" placeholder="Price" [(ngModel)]="newFlight.price" /><br />
+  Price: <input type="text" name="price" placeholder="Price" [(ngModel)]="newFlight.price" /><br />
   <br/>
-  <p>Photo URL:</p>
-  <input type="text" name="photoUrl" placeholder="http://your_photo_url" [(ngModel)]="newFlight.photoUrl"/><br />
+  Photo URL: <input type="text" name="photoUrl" placeholder="http://your_photo_url" [(ngModel)]="newFlight.photoUrl"/><br />
   <!-- <img [src]="newFlight.photoUrl" alt =""> -->
   <br/>
   <input type="submit" name="submit" value="Add Flight" (click)="addFlight()"/>
 </form>
-
-<div *ngIf= "display">
-  <h1>Display Flights</h1>
-</div>
-
+<br/>
+<br/>
 <!-- //=========== -->
-<h1>Update Flight</h1>
+<h1 [style.color] = "color1">Update Flight</h1>
 <form>
-  <p>Flight ID:</p>
-  <input type="text" name="id" placeholder="0" [(ngModel)]="tempFlight.id"/>
+  Flight ID: <input type="text" name="id" placeholder="0" [(ngModel)]="tempFlight.id"/>
   <br/>
-  <p>Flight Name:</p>
-  <input type="text" name="name" placeholder="AA0000" [(ngModel)]="tempFlight.name"/>
+  <br/>
+  <p>Update this Flight To:</p>
+  Flight: <input type="text" name="name" placeholder="AA0000" [(ngModel)]="tempFlight.name"/>
   <br/>
   <br/>
   <p>Scheduled Time:</p>
@@ -73,29 +66,28 @@
   Departure: <input type="text" name="fromAirport" placeholder="Airport name" [(ngModel)]="tempFlight.fromAirport"/>
   Arrival: <input type="text" name="toAirport" placeholder="Airport name" [(ngModel)]="tempFlight.toAirport"/><br />
   <br/>
-  <p>Price:</p>
-  <input type="text" name="price" placeholder="Price" [(ngModel)]="tempFlight.price" /><br />
+  Price: <input type="text" name="price" placeholder="Price" [(ngModel)]="tempFlight.price" /><br />
   <br/>
-  <p>Photo URL:</p>
-  <input type="text" name="photoUrl" placeholder="http://your_photo_url" [(ngModel)]="tempFlight.photoUrl"/><br />
+  Photo URL: <input type="text" name="photoUrl" placeholder="http://your_photo_url" [(ngModel)]="tempFlight.photoUrl"/><br />
   <br/>
   <input type="submit" name="submit" value="Update Flight" (click)="updateFlight(tempFlight, tempFlight.id)"/>
 </form>
-
+<br/>
+<br/>
 <!-- //=========== -->
-<h1>Delete Flight</h1>
+<h1 [style.color] = "color1">Delete Flight</h1>
 <form>
-  <p>Flight ID:</p>
-  <input type="text" name="id" placeholder="0" [(ngModel)]="tempFlight.id"/>
+  Flight ID: <input type="text" name="id" placeholder="0" [(ngModel)]="tempFlight.id"/>
   <br/>
   <input type="submit" name="submit" value="Delete Flight" (click)="deleteFlight(tempFlight.id)"/>
 </form>
-
+<br/>
+<br/>
 <!-- //=========== -->
 <br/>
-<h1>List of all Flights</h1>
+<h1 [style.color] = "color1">List of all Flights</h1>
 <div *ngFor="let flight1 of flight">
-  <h4>{{flight1.name}}</h4>
+  <h4 [style.color] = "color2">{{flight1.name}}</h4>
   <p>{{flight1.std}}</p>
   <p>{{flight1.sta}}</p>
   <p>{{flight1.atd}}</p>
