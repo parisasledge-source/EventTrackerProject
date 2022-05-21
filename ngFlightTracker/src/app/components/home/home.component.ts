@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Flight } from 'src/app/models/flight';
+import { FlightTrackerService } from 'src/app/services/flight-tracker.service';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit {
     search: 'Search'
   };
   //===================
-  display = true;
+  display = false;
 
   newFlight: Flight = new Flight();
   flight =
@@ -34,9 +35,15 @@ export class HomeComponent implements OnInit {
 
   flight1 = new Flight();
 
-  constructor() { }
+  constructor(private flightTrackerService: FlightTrackerService) { }
+
 
   ngOnInit(): void {
+    //this.flight = this.flightTrackerService.index();
+  }
+
+  getNumberOfFlights(){
+    return this.flight.length;
   }
 
   onSubmit() {
