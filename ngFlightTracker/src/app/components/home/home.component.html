@@ -1,5 +1,6 @@
 <!-- <p>home works!</p> -->
-<h1 [style.color] = "color1">Welcome to Flight Tracker</h1>
+
+<h1 [style.color] = "color1">{{title}}</h1>
 <h3 [style.color] = "color2">{{subTitle}}</h3>
 <br>
 <br>
@@ -46,11 +47,11 @@
 </form> -->
 
 <div *ngIf= "display">
-  <h2>Hello</h2>
+  <h2>Flights</h2>
 </div>
 
 <div *ngFor="let flight1 of flight">
-  <p>{{flight1.name}}</p>
+  <h4>{{flight1.name}}</h4>
   <p>{{flight1.std}}</p>
   <p>{{flight1.sta}}</p>
   <p>{{flight1.atd}}</p>

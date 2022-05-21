@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   color2 = '#8DAA91';
   // color3 = '#7F6C79';
 
+  title = 'The most amazing flight search engine!';
   subTitle = 'The most amazing flight search engine!';
   //=================
   header = 'Options';
@@ -36,6 +37,11 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    this.flight.push(this.newFlight);
+    this.newFlight = new Flight();
   }
 
 }
