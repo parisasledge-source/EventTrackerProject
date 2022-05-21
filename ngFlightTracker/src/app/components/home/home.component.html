@@ -33,7 +33,8 @@
 
 <h5>{{flight | json}}</h5> -->
 
-<!-- <form>
+<h1>Create Flight</h1>
+<form>
   <input type="text" name="name" placeholder="Name" [(ngModel)]="newFlight.name"/><br />
   <input type="text" name="std" placeholder="Scheduled Time of Departure" [(ngModel)]="newFlight.std"/><br />
   <input type="text" name="sta" placeholder="Scheduled Time of Arrival" [(ngModel)]="newFlight.sta"/><br />
@@ -44,10 +45,10 @@
   <input type="text" name="price" placeholder="Price" [(ngModel)]="newFlight.price" /><br />
   <input type="text" name="photoUrl" placeholder="Photo URL" [(ngModel)]="newFlight.photoUrl"/><br />
   <input type="submit" name="submit" value="Add Item" (click)="onSubmit()"/>
-</form> -->
+</form>
 
 <div *ngIf= "display">
-  <h2>Flights</h2>
+  <h1>Display Flights</h1>
 </div>
 
 <div *ngFor="let flight1 of flight">
