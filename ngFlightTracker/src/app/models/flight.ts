@@ -21,7 +21,7 @@ export class Flight {
   toAirport: string ='',
   airline: string ='',
   aircraft: string ='',
-  price: number =0,
+  price: number = 0,
   photoUrl: string= ''
   ){
     this.name = name;

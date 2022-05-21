@@ -11,3 +11,24 @@
 <!-- //========================== -->
 <!-- <img src="https://www.omanairports.co.om/images/media_center.jpg" alt="PhotoUrl"> -->
 <img src="https://mysterioustrip.com/wp-content/uploads/2020/02/virgin-2721333_1920-1-1024x399.jpg" alt="PhotoUrl">
+
+<h1>Flight Form</h1>
+
+<form class="row g-3">
+  <div class="col-md-6">
+    Flight Name: <input type="text" name="name" [(ngModel)]="flight.name" /><br>
+    Scheduled Time of Departure: <input type="datetime-local" name="std" [(ngModel)]="flight.std"/><br>
+    Scheduled Time of Arrival: <input type="datetime-local" name="sta" [(ngModel)]="flight.sta"/><br>
+    Actual Time of Departure:<input type="datetime-local" name="atd" [(ngModel)]="flight.atd"/><br>
+    Status: <input type="datetime-local" name="status" [(ngModel)]="flight.status"/><br>
+    Departure Airport: <input type="text" name="fromAirport" [(ngModel)]="flight.fromAirport" /><br>
+    Arrival Airport: <input type="text" name="toAirport" [(ngModel)]="flight.toAirport" /><br>
+    Airline: <input type="text" name="airline" [(ngModel)]="flight.airline" /><br>
+    Aircraft:<input type="text" name="aircraft" [(ngModel)]="flight.aircraft" /><br>
+    Price: <input type="text" name="price" [(ngModel)]="flight.price" /><br>
+    Photo URL: <input type="text" name="photoUrl" [(ngModel)]="flight.photoUrl" /><br>
+  <!-- <input type="submit" (click)="onSubmit()"> -->
+</div>
+</form>
+
+<h5>{{flight | json}}</h5>

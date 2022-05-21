@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Flight } from 'src/app/models/flight';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  //==================
   color1 = '#7F6C79';
   color2 = '#8DAA91';
   // color3 = '#7F6C79';
@@ -20,6 +22,8 @@ export class HomeComponent implements OnInit {
     search: 'Search'
   };
   //===================
+  flight = new Flight();
+
   constructor() { }
 
   ngOnInit(): void {
