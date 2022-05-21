@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   color2 = '#8DAA91';
   // color3 = '#7F6C79';
 
-  title = 'The most amazing flight search engine!';
+  title = 'Flight Tracker';
   subTitle = 'The most amazing flight search engine!';
   //=================
   header = 'Options';
@@ -35,18 +35,42 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.flight = this.flightTrackerService.index();
+    this.reload();
+  }
+
+  reload() {
+    this.flightTrackerService.index().subscribe(
+      data => this.flight = data,
+      err => console.error(err)
+    );
   }
 
   getNumberOfFlights(){
     return this.flight.length;
   }
 
+  // displayFlight(flight: Flight) {
+  //   this.selected = flight;
+  // }
+
+  // displayTable(){
+  //   this.selected = null;
+  // }
+
+  addFlight(){
+    this.flightTrackerService.create(this.newFlight).subscribe(
+      data => {this.reload();
+                this.newFlight = new Flight()},
+      err => console.error(err)
+    )
+
+  }
+
   onSubmit() {
     //this.flight.push(this.newFlight);
     this.flightTrackerService.create(this.newFlight);
     this.newFlight = new Flight();
-    this.flight = this.flightTrackerService.index();
+    //this.flight = this.flightTrackerService.index();
   }
 
 }
