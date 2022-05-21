@@ -27,19 +27,15 @@ export class HomeComponent implements OnInit {
   display = false;
 
   newFlight: Flight = new Flight();
-  flight =
-  [
-    new Flight('AA2477', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', 'Seattle', 'Dallas',  'American Airlines', 'aa', 611.39, 'https://www.airport-technology.com/wp-content/uploads/sites/14/2017/10/main-1262.jpg'),
-    new Flight('AA2477', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', '2022-05-01T08:35:00', 'Seattle', 'Dallas',  'American Airlines', 'aa', 611.39, 'https://www.airport-technology.com/wp-content/uploads/sites/14/2017/10/main-1262.jpg')
-  ];
 
-  flight1 = new Flight();
+  flight: Flight[] = [];
+  //flight1 = new Flight();
 
   constructor(private flightTrackerService: FlightTrackerService) { }
 
 
   ngOnInit(): void {
-    //this.flight = this.flightTrackerService.index();
+    this.flight = this.flightTrackerService.index();
   }
 
   getNumberOfFlights(){
@@ -47,8 +43,10 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit() {
-    this.flight.push(this.newFlight);
+    //this.flight.push(this.newFlight);
+    this.flightTrackerService.create(this.newFlight);
     this.newFlight = new Flight();
+    this.flight = this.flightTrackerService.index();
   }
 
 }
