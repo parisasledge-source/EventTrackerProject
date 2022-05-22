@@ -87,16 +87,19 @@
 <br/>
 <h1 [style.color] = "color1">List of all Flights</h1>
 <div *ngFor="let flight1 of flight">
-  <h4 [style.color] = "color2">{{flight1.name}}</h4>
-  <p>{{flight1.std}}</p>
-  <p>{{flight1.sta}}</p>
-  <p>{{flight1.atd}}</p>
-  <p>{{flight1.status}}</p>
-  <p>{{flight1.fromAirport}}</p>
-  <p>{{flight1.toAirport}}</p>
-  <p>{{flight1.airline}}</p>
-  <p>{{flight1.aircraft}}</p>
-  <p>{{flight1.price}}</p>
+  <h4 [style.color] = "color2">Flight {{flight1.name}}</h4>
+  <p>STD: {{flight1.std}}</p>
+  <p>STA: {{flight1.sta}}</p>
+  <p>ATD: {{flight1.atd}}</p>
+  <p>ATA: {{flight1.status}}</p>
+  <p>From: {{flight1.fromAirport}}</p>
+  <p>To: {{flight1.toAirport}}</p>
+  <p>Airline: {{flight1.airline}}</p>
+  <p>Aircraft: {{flight1.aircraft}}</p>
+  <p>Price: {{flight1.price}}</p>
   <img [src]="flight1.photoUrl" alt ="">
-  <p>{{flight1.photoUrl}}</p>
+  <h4 [style.color] = "color2">{{flight1.fromAirport}}</h4>
+  <p>(Image from: {{flight1.photoUrl}})</p>
+  <br>
+  <br>
 </div>
