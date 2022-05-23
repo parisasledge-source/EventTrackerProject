@@ -88,3 +88,26 @@ Adding a function that uses the response data to present the data in the form of
 2. Performing all interactions with the database RESTfully
 3. Using Javascript to access data and manipulating the DOM
 4. Presenting the aggregated data in an additional format
+
+## Section Three (Frontend Process with Angular)
+
+### Steps & overview
+Adding angular functionality
+
+Configuring the application by bringing in dependencies and setting up the file structure
+
+Sending asynchronous requests to the server using http
+
+Using service in the components controller to display data
+
+Building up Create/Read/Update/Delete functionality on the client
+
+Adding a function that uses the response data to present the data in the form of "Total Number of Flights" (Every time a new object is added to the list the total number of flight is increased by one and displayed with a reload of the list of all the flights)
+
+### Technologies used and lessons learned
+1. Configuring an Angular application
+2. Using Components
+3. Services
+4. Directives
+5. Sending / receiving JSON
+6. Sending asynchronous request to Java controller with http
