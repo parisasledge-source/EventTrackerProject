@@ -107,7 +107,7 @@ Adding a function that uses the response data to present the data in the form of
 ### Technologies used and lessons learned
 1. Configuring an Angular application
 2. Using Components
-3. Services
-4. Directives
+3. Using Services
+4. Using Directives
 5. Sending / receiving JSON
 6. Sending asynchronous request to Java controller with http

@@ -31,7 +31,7 @@ function init() {
 
 function getFlights() {
 	let xhr = new XMLHttpRequest();
-	xhr.open('GET', 'api/index');
+	xhr.open('GET', 'api/flights');
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4) {
 			if (xhr.status < 400) {
@@ -193,7 +193,7 @@ function createFlightTrack(e) {
 	//console.log('Hello create Flight'); 
 
 	let xhr = new XMLHttpRequest();
-	xhr.open('POST', 'api/flights/createFlight', true);
+	xhr.open('POST', 'api/flights', true);
 
 	xhr.setRequestHeader("Content-type", "application/json"); // Specify JSON request body
 
